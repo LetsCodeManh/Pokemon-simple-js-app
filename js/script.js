@@ -1,4 +1,4 @@
-let pokemonRepository = ( function () {
+let pokemonRepository = (function () {
   let pokemonList = [
     {
       index: "#001",
@@ -32,30 +32,31 @@ let pokemonRepository = ( function () {
 
   function getAll() {
     return pokemonList;
-  } 
+  }
 
   function add(pokemon) {
-    if (typeof pokemon === 'object') {
-      pokemonList.push(pokemon)
+    if (
+      typeof pokemon === "object" &&
+      Object.keys(pokemon) === Object.keys(pokemonList[0])
+    ) {
+      pokemonList.push(pokemon);
     } else {
-      return 'This is not an object, please add an object in the List!'
+      return "This is not an object, please add an object in the List!";
     }
   }
 
   return {
     getAll: getAll,
-    add: add
-  }
-})()
+    add: add,
+  };
+})();
 
-console.log(pokemonRepository.getAll())
+console.log(pokemonRepository.getAll());
 
 // Using forEach instead of for
 pokemonRepository.getAll().forEach((pokemon) => {
-  document.write(
-    "<p>" + pokemon.name + " " + pokemon.height + "</p>"
-  );
-})
+  document.write("<p>" + pokemon.name + " " + pokemon.height + "</p>");
+});
 
 // Write a pokemonList in JS - name + height
 // for (i = 0; i < pokemonList.length; i++) {
