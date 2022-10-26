@@ -40,14 +40,23 @@ for (i = 0; i < pokemonList.length; i++) {
 // Write a pokemonList in JS and checking the height of the pokemon- name + height
 for (i = 0; i < pokemonList.length; i++) {
   if (parseFloat(pokemonList[i].height) >= 6) {
+    document.write(
+      "<p>" + pokemonList[i].name + " " + pokemonList[i].height + " - Wow, that is a big one" + "</p>"
+    );
     console.log(
       `${pokemonList[i].name} ${pokemonList[i].height} - Wow, that is a big one`
     );
   } else if (parseFloat(pokemonList[i].height) >= 3) {
+    document.write(
+      "<p>" + pokemonList[i].name + " " + pokemonList[i].height + " - Wow, that is a normal one" + "</p>"
+    );
     console.log(
       `${pokemonList[i].name} ${pokemonList[i].height} - Wow, that is a normal one`
     );
   } else if (parseFloat(pokemonList[i].height) >= 0) {
+    document.write(
+      "<p>" + pokemonList[i].name + " " + pokemonList[i].height + " - Wow, that is a small one" + "</p>"
+    );
     console.log(
       `${pokemonList[i].name} ${pokemonList[i].height} - Wow, that is a small one`
     );
