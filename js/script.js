@@ -45,6 +45,12 @@ let pokemonRepository = (function () {
     }
   }
 
+  // function pokemonSearch(arr, query) {
+  //   return arr.filter(pokemon => {
+  //     pokemon.toLowerCase().includes(query.toLowerCase())
+  //   })
+  // }
+
   return {
     getAll: getAll,
     add: add,
