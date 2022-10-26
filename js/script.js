@@ -1,37 +1,53 @@
-let pokemonList = [
-  {
-    index: "#001",
-    name: "Bulbasaur",
-    height: "2' 04\"",
-    type: ["grass", "poison"],
-    weaknesses: ["fire", "psychic", "flying", "ice"],
-  },
-  {
-    index: "#002",
-    name: "Ivysaur",
-    height: "3' 03\"",
-    type: ["grass", "poison"],
-    weaknesses: ["fire", "psychic", "flying", "ice"],
-  },
-  {
-    index: "#003",
-    name: "Venusaur",
-    height: "6' 07\"",
-    type: ["grass", "poison"],
-    weaknesses: ["fire", "psychic", "flying", "ice"],
-  },
-  {
-    index: "#999",
-    name: "XXX",
-    height: "-1",
-    type: ["grass", "poison"],
-    weaknesses: ["fire", "psychic", "flying", "ice"],
-  },
-];
+let pokemonRepository = ( function () {
+  let pokemonList = [
+    {
+      index: "#001",
+      name: "Bulbasaur",
+      height: "2' 04\"",
+      type: ["grass", "poison"],
+      weaknesses: ["fire", "psychic", "flying", "ice"],
+    },
+    {
+      index: "#002",
+      name: "Ivysaur",
+      height: "3' 03\"",
+      type: ["grass", "poison"],
+      weaknesses: ["fire", "psychic", "flying", "ice"],
+    },
+    {
+      index: "#003",
+      name: "Venusaur",
+      height: "6' 07\"",
+      type: ["grass", "poison"],
+      weaknesses: ["fire", "psychic", "flying", "ice"],
+    },
+    {
+      index: "#999",
+      name: "XXX",
+      height: "-1",
+      type: ["grass", "poison"],
+      weaknesses: ["fire", "psychic", "flying", "ice"],
+    },
+  ];
 
+  function getAll() {
+    return pokemonList;
+  } 
+
+  function add(pokemon) {
+    pokemonList.push(pokemon)
+  }
+
+  return {
+    getAll: getAll,
+    add: add
+  }
+})()
+
+console.log(pokemonRepository.getAll())
 
 // Using forEach instead of for
-pokemonList.forEach((pokemon) => {
+pokemonRepository.getAll().forEach((pokemon) => {
   document.write(
     "<p>" + pokemon.name + " " + pokemon.height + "</p>"
   );
