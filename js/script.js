@@ -22,4 +22,8 @@ let pokemonList = [
   },
 ];
 
-console.log(pokemonList);
+// Write a pokemonList in JS - name + height
+for (i = 0; i < pokemonList.length; i++) {
+  document.write(`${pokemonList[i].name} ${pokemonList[i].height}`);
+  console.log(`${pokemonList[i].name} ${pokemonList[i].height}`);
+}
