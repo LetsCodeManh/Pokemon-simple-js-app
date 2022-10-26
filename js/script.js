@@ -26,12 +26,14 @@ let pokemonList = [
     height: "-1",
     type: ["grass", "poison"],
     weaknesses: ["fire", "psychic", "flying", "ice"],
-  }
+  },
 ];
 
 // Write a pokemonList in JS - name + height
 for (i = 0; i < pokemonList.length; i++) {
-  document.write(`${pokemonList[i].name} ${pokemonList[i].height}`);
+  document.write(
+    "<p>" + pokemonList[i].name + " " + pokemonList[i].height + "</p>"
+  );
   console.log(`${pokemonList[i].name} ${pokemonList[i].height}`);
 }
 
@@ -41,15 +43,15 @@ for (i = 0; i < pokemonList.length; i++) {
     console.log(
       `${pokemonList[i].name} ${pokemonList[i].height} - Wow, that is a big one`
     );
-  } else if (parseFloat(pokemonList[i].height)  >= 3) {
+  } else if (parseFloat(pokemonList[i].height) >= 3) {
     console.log(
       `${pokemonList[i].name} ${pokemonList[i].height} - Wow, that is a normal one`
     );
-  } else if (parseFloat(pokemonList[i].height)  >= 0) {
+  } else if (parseFloat(pokemonList[i].height) >= 0) {
     console.log(
       `${pokemonList[i].name} ${pokemonList[i].height} - Wow, that is a small one`
     );
   } else {
-    console.log('This Pokemon height doesnt exits')
+    console.log("This Pokemon height doesnt exits");
   }
 }
