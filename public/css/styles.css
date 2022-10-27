@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+}
+
+html {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.75;
+}
+
+.container {
+  min-height: 100vh;
+  padding-inline: 2rem;
+}
+
+.pokemon-list {
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.pokemon-list li {
+  list-style: none;
+}
+.pokemon-list li button {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: antiquewhite;
+  border: 2px solid black;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
