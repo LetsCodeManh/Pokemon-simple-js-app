@@ -45,6 +45,7 @@ let pokemonRepository = (function () {
     }
   }
 
+  // Creating a list of pokemons in HTML
   function addListItem(pokemon) {
     let pokemonHtmlList = document.querySelector(".pokemon-list");
     let listItem = document.createElement("li");
@@ -53,8 +54,17 @@ let pokemonRepository = (function () {
     listButton.innerText = pokemon.name;
     listItem.appendChild(listButton);
     pokemonHtmlList.appendChild(listItem);
+
+    listButton.addEventListener("click", e => {
+      showDetails(pokemon.name)
+    })
+  };
+
+  function showDetails(pokemon) {
+    console.log(pokemon)
   }
 
+  // Return Everything necesarry
   return {
     getAll: getAll,
     add: add,
