@@ -53,6 +53,24 @@ let pokemonRepository = (function () {
       });
   }
 
+  function loadDetails(item) {
+    let url = item.detailsUrl;
+    return fetch(url)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (details) {
+        item.imgFrontUrl = details.sprites.front_default;
+        item.imgBackUrl = details.sprites.back_default;
+        item.height = details.height;
+        item.weight = details.weight;
+        item.types = details.types
+      })
+      .catch(function (e) {
+        console.error(e);
+      });
+  }
+
   function showDetails(pokemon) {
     console.log(pokemon);
   }
@@ -63,6 +81,7 @@ let pokemonRepository = (function () {
     add: add,
     addListItem: addListItem,
     loadList: loadList,
+    loadDetails: loadDetails,
   };
 })();
 
