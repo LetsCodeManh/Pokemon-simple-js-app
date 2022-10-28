@@ -87,8 +87,6 @@ let pokemonRepository = (function () {
   };
 })();
 
-console.log(pokemonRepository.getAll());
-
 // Using forEach instead of for
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
