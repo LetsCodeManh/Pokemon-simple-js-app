@@ -21,12 +21,11 @@ let pokemonRepository = (function () {
   // Creating a list of pokemons in HTML
   function addListItem(pokemon) {
     let pokemonHtmlList = document.querySelector(".pokemon-list");
-
     let listButton = document.createElement("button");
     listButton.classList.add("list-group-item");
-    listButton.getAttribute("type", "button");
-    listButton.getAttribute("data-toggle", "modal");
-    pokemonHtmlList.getAttribute("data-target", "#exampleModal");
+    listButton.setAttribute("type", "button");
+    listButton.setAttribute("data-toggle", "modal");
+    listButton.setAttribute("data-target", "#exampleModal");
     listButton.innerText = pokemon.name;
 
     pokemonHtmlList.appendChild(listButton);
@@ -75,21 +74,23 @@ let pokemonRepository = (function () {
   }
 
   function showDetails(pokemon) {
-    let pokemonHeader = document.querySelector(".modal-title");
-    pokemonHeader.innerText = pokemon.name;
+    loadDetails(pokemon).then(function () {
+      let pokemonHeader = document.querySelector(".modal-title");
+      pokemonHeader.innerText = pokemon.name;
 
-    let pokemonBody = document.querySelector(".modal-body");
-    let pokemonImage = document.createElement("img");
-    pokemonImage.setAttribute("src", pokemon.imgFrontUrl);
-    pokemonBody.appendChild(pokemonImage);
+      let pokemonBody = document.querySelector(".modal-body");
+      let pokemonImage = document.createElement("img");
+      pokemonImage.setAttribute("src", pokemon.imgFrontUrl);
+      pokemonBody.appendChild(pokemonImage);
 
-    let pokemonHeight = document.createElement("p");
-    pokemonHeight.innerText = "height: " + pokemon.height;
-    pokemonBody.appendChild(pokemonHeight);
+      let pokemonHeight = document.createElement("p");
+      pokemonHeight.innerText = "height: " + pokemon.height;
+      pokemonBody.appendChild(pokemonHeight);
 
-    let pokemonWeight = document.createElement("p");
-    pokemonWeight.innerText = "weight: " + pokemon.weight;
-    pokemonBody.appendChild(pokemonWeight);
+      let pokemonWeight = document.createElement("p");
+      pokemonWeight.innerText = "weight: " + pokemon.weight;
+      pokemonBody.appendChild(pokemonWeight);
+    });
   }
 
   // Return Everything necesarry
